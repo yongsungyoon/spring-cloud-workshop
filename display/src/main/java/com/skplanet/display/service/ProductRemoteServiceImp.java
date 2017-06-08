@@ -1,5 +1,6 @@
 package com.skplanet.display.service;
 
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
@@ -13,6 +14,7 @@ public class ProductRemoteServiceImp implements ProductRemoteService {
     RestTemplate restTemplate;
 
     @Override
+    @HystrixCommand
     public String getProductInfo(String productId) {
         return this.restTemplate.getForObject(url + productId, String.class);
     }
