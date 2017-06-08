@@ -12,13 +12,13 @@ public class ProductController {
     @RequestMapping(path = "{productId}", method = RequestMethod.GET)
     public String getProductInfo(@PathVariable String productId) {
 
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+//        try {
+//            Thread.sleep(2000);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
 
-        return "[product id = " + productId + " at " + System.currentTimeMillis() + "]";
-        //throw new RuntimeException("I/O Exception");
+        //return "[product id = " + productId + " at " + System.currentTimeMillis() + "]";
+        throw new RuntimeException("I/O Exception");
     }
 }
