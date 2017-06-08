@@ -11,6 +11,7 @@ public class ProductController {
 
     @RequestMapping(path = "{productId}", method = RequestMethod.GET)
     public String getProductInfo(@PathVariable String productId) {
-            return "[product id = " + productId + " at " + System.currentTimeMillis() + "]";
+        //return "[product id = " + productId + " at " + System.currentTimeMillis() + "]";
+        throw new RuntimeException("I/O Exception");
     }
 }
