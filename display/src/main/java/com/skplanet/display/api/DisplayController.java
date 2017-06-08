@@ -17,8 +17,7 @@ public class DisplayController {
     @RequestMapping(path = "/{displayId}", method = RequestMethod.GET)
     public String getDisplayDetail(@PathVariable String displayId) {
 
-        String productInfo = "[unknown]";
-        //String productInfo = productRemoteService.getProductInfo("12345");
+        String productInfo = productRemoteService.getProductInfo("12345");
 
         return String.format("[display id = %s at %s %s ]", displayId, System.currentTimeMillis(), productInfo);
     }
