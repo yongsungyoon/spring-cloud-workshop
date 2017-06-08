@@ -14,11 +14,10 @@ public class ProductRemoteServiceImp implements ProductRemoteService {
     RestTemplate restTemplate;
 
     @Override
-    @HystrixCommand(fallbackMethod = "getProductInfoFallback")
+    @HystrixCommand(commandKey = "productInfo", fallbackMethod = "getProductInfoFallback")
     public String getProductInfo(String productId) {
         return this.restTemplate.getForObject(url + productId, String.class);
     }
-
 
     public String getProductInfoFallback(String productId, Throwable t) {
         System.out.println("t = " + t);

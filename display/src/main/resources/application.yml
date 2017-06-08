@@ -7,7 +7,7 @@ server:
 
 hystrix:
   command:
-    default:    # command key. use 'default' for global setting.
+    productInfo:    # command key. use 'default' for global setting.
       execution:
         isolation:
           thread:
