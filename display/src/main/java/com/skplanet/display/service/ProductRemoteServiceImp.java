@@ -20,7 +20,8 @@ public class ProductRemoteServiceImp implements ProductRemoteService {
     }
 
 
-    public String getProductInfoFallback(String productId) {
+    public String getProductInfoFallback(String productId, Throwable t) {
+        System.out.println("t = " + t);
         return "[ this product is sold out ]";
     }
 }
