@@ -28,3 +28,6 @@ product:
     MaxAutoRetries: 0  # default 0
     MaxAutoRetriesNextServer: 1 # default 1
 
+eureka:
+  instance:
+    prefer-ip-address: true
