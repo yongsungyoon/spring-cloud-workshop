@@ -1,0 +1,32 @@
+plugins {
+    id 'java'
+    // Spring Boot
+    id 'org.springframework.boot' version '1.5.3.RELEASE'
+}
+
+group = 'com.skplanet'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = JavaVersion.VERSION_1_8
+targetCompatibility = JavaVersion.VERSION_1_8
+
+repositories {
+    mavenLocal()
+    maven { url 'http://mvn.skplanet.com/content/groups/public/' }                 // ilsan nexus
+    maven { url 'http://172.18.176.107:8081/nexus/content/groups/public/' }        // borame nexus
+    mavenCentral()
+}
+
+dependencies {
+    compile('org.springframework.boot:spring-boot-starter-web')
+    compile('org.springframework.retry:spring-retry:1.2.0.RELEASE')  // spring cloud requires spring-retry for auto-retry.
+    compile('org.springframework.cloud:spring-cloud-starter-eureka-server') // Enable Eureka Server
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+}
+
+dependencyManagement { // for dependency management plugin (enabled by spring-boot gradle plugin)
+    imports {
+        // Dalston.SR1 is the latest version of Spring Cloud at this moment (2017/06/07)
+        mavenBom "org.springframework.cloud:spring-cloud-dependencies:Dalston.SR1"
+    }
+}
