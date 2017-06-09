@@ -1,10 +1,10 @@
 spring:
   application:
     name: display
-  cloud:
-    loadbalancer:
-      retry:
-        enabled: true
+#  cloud:
+#    loadbalancer:
+#      retry:
+#        enabled: true   # true as default in Dalston
 
 server:
   port: 8081
