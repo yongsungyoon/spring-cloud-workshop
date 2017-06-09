@@ -22,9 +22,9 @@ hystrix:
 
 product:
   ribbon:
-    eureka:
-      enabled: false
-    listOfServers: localhost:8082,localhost:7777
+#    eureka:
+#      enabled: false
+#    listOfServers: localhost:8082,localhost:7777
     MaxAutoRetries: 0  # default 0
     MaxAutoRetriesNextServer: 1 # default 1
 
