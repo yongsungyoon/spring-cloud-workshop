@@ -18,7 +18,7 @@ public class ProductController {
 //            e.printStackTrace();
 //        }
 
-        return "[product id = " + productId + " at " + System.currentTimeMillis() + "]";
-//        throw new RuntimeException("I/O Exception");
+//        return "[product id = " + productId + " at " + System.currentTimeMillis() + "]";
+        throw new RuntimeException("I/O Exception");
     }
 }
