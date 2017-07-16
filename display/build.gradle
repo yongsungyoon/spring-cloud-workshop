@@ -19,6 +19,7 @@ repositories {
 
 dependencies {
     compile('org.springframework.boot:spring-boot-starter-web')
+    compile('org.springframework.boot:spring-boot-starter-actuator')
     compile('org.springframework.retry:spring-retry:1.2.0.RELEASE')  // spring cloud requires spring-retry for auto-retry.
     compile('org.springframework.cloud:spring-cloud-starter-hystrix') // 1. To use spring-cloud-hystrix
     compile('org.springframework.cloud:spring-cloud-starter-ribbon')  // 2. To use ribbon

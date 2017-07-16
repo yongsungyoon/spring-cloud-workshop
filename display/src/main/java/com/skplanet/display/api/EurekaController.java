@@ -1,13 +1,7 @@
 package com.skplanet.display.api;
 
-import com.netflix.appinfo.ApplicationInfoManager;
-import com.netflix.appinfo.HealthCheckHandler;
-import com.netflix.discovery.EurekaClient;
+import com.skplanet.display.service.VineHealthIndicator;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cloud.client.serviceregistry.ServiceRegistry;
-import org.springframework.cloud.netflix.eureka.CloudEurekaInstanceConfig;
-import org.springframework.cloud.netflix.eureka.serviceregistry.EurekaRegistration;
-import org.springframework.context.annotation.Bean;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -18,26 +12,13 @@ import static org.springframework.web.bind.annotation.RequestMethod.GET;
 public class EurekaController {
 
     @Autowired
-    EurekaRegistration eurekaRegistration;
-
-    @Autowired(required = false)
-    private HealthCheckHandler healthCheckHandler;
-
-    @Autowired
-    private ServiceRegistry serviceRegistry;
+    VineHealthIndicator vineHealthIndicator;
 
     @RequestMapping(path = "/register", method = GET)
     public boolean registerEureka() {
-        serviceRegistry.register(eurekaRegistration);
+
+        vineHealthIndicator.setInitialzed(true);
         return true;
     }
 
-    @Bean
-    public EurekaRegistration eurekaRegistration(EurekaClient eurekaClient, CloudEurekaInstanceConfig instanceConfig, ApplicationInfoManager applicationInfoManager) {
-        return EurekaRegistration.builder(instanceConfig)
-                .with(applicationInfoManager)
-                .with(eurekaClient)
-                .with(healthCheckHandler)
-                .build();
-    }
 }

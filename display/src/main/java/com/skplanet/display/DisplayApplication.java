@@ -11,7 +11,7 @@ import org.springframework.web.client.RestTemplate;
 
 @SpringBootApplication
 @EnableCircuitBreaker
-@EnableDiscoveryClient(autoRegister = false)
+@EnableDiscoveryClient
 @EnableFeignClients
 public class DisplayApplication {
 
