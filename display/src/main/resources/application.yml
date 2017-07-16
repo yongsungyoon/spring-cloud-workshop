@@ -47,3 +47,8 @@ eureka:
 feign:
   hystrix:
     enabled: true
+
+logging:
+  level:
+    root: DEBUG
+
