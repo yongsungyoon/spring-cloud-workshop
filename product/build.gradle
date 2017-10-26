@@ -1,7 +1,7 @@
 plugins {
     id 'java'
     // Spring Boot
-    id 'org.springframework.boot' version '1.5.3.RELEASE'
+    id 'org.springframework.boot' version '1.5.6.RELEASE'
 }
 
 group = 'com.skplanet'
@@ -26,7 +26,6 @@ dependencies {
 
 dependencyManagement { // for dependency management plugin (enabled by spring-boot gradle plugin)
     imports {
-        // Dalston.SR1 is the latest version of Spring Cloud at this moment (2017/06/07)
-        mavenBom "org.springframework.cloud:spring-cloud-dependencies:Dalston.SR1"
+        mavenBom "org.springframework.cloud:spring-cloud-dependencies:Dalston.SR3"
     }
 }

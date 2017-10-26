@@ -1,5 +1,5 @@
 server:
-  port: 8761  # Default : 8761
+  port: 8762  # Default : 8761
 
 spring:
   application:
@@ -11,13 +11,7 @@ eureka:
     enableSelfPreservation: false           # Just for demo
   client:
     service-url:
-      defaultZone: http://localhost:8762/eureka
+      defaultZone: http://localhost:8761/eureka
   instance:
     prefer-ip-address: true                 # Use ip address instead of hostname from OS when reporting myself to eureka server
 
-logging:
-  level:
-    com.netflix: debug
-    vine: debug
-    org.springframework: debug
-    com.netflix.eureka.registry.ResponseCacheImpl: 'off'
