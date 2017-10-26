@@ -12,8 +12,6 @@ targetCompatibility = JavaVersion.VERSION_1_8
 
 repositories {
     mavenLocal()
-    maven { url 'http://mvn.skplanet.com/content/groups/public/' }                 // ilsan nexus
-    maven { url 'http://172.18.176.107:8081/nexus/content/groups/public/' }        // borame nexus
     mavenCentral()
 }
 
