@@ -1,10 +1,11 @@
 plugins {
     id 'java'
     // Spring Boot
-    id 'org.springframework.boot' version '1.5.3.RELEASE'
+    id 'org.springframework.boot' version '2.1.2.RELEASE'
+    id 'io.spring.dependency-management' version "1.0.6.RELEASE"
 }
 
-group = 'com.skplanet'
+group = 'com.11stcorp'
 version '1.0-SNAPSHOT'
 
 sourceCompatibility = JavaVersion.VERSION_1_8
@@ -17,14 +18,13 @@ repositories {
 
 dependencies {
     compile('org.springframework.boot:spring-boot-starter-web')
-    compile('org.springframework.retry:spring-retry:1.2.0.RELEASE')  // spring cloud requires spring-retry for auto-retry.
-    compile('org.springframework.cloud:spring-cloud-starter-eureka-server') // Enable Eureka Server
+    compile('org.springframework.retry:spring-retry:1.2.4.RELEASE')  // spring cloud requires spring-retry for auto-retry.
+    compile('org.springframework.cloud:spring-cloud-starter-netflix-eureka-server') // Enable Eureka Server
     testCompile('org.springframework.boot:spring-boot-starter-test')
 }
 
 dependencyManagement { // for dependency management plugin (enabled by spring-boot gradle plugin)
     imports {
-        // Dalston.SR1 is the latest version of Spring Cloud at this moment (2017/06/07)
-        mavenBom "org.springframework.cloud:spring-cloud-dependencies:Dalston.SR1"
+        mavenBom "org.springframework.cloud:spring-cloud-dependencies:Greenwich.RELEASE"
     }
 }
